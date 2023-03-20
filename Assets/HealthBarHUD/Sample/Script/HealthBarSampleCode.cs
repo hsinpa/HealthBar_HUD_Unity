@@ -34,7 +34,11 @@ namespace Hsinpa.Healthbar.Sample
             string damageString = damageInputField.text;
 
             if (int.TryParse(damageString, out int damageInt)) {
+
+                if (damageInt > 0) damageInt = damageInt * -1;
+
                 int newHP = healthBarView.UpdateHPValue(damageInt);
+
                 UpdateHPText();
             }
 
